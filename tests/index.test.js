@@ -24,11 +24,17 @@ describe(`Wikipedia ${global['jest-playwright'].displayName}`, () => {
       .story("すとーりー")
       .addEnvironment('browser', global['jest-playwright'].displayName)
 
-    // console.log(browserName, browser)
-    // console.log(expect.getState())
     await page.goto('https://www.wikipedia.org/')
-    const image = await page.screenshot();
-    reporter.addAttachment(`SS-Wikipedia-${global['jest-playwright'].displayName}`, image, "image/png");
+
+    reporter.startStep("titleチェック")
+    const title = await page.title()
+    expect(title).toBe('Wikipedia')
+    reporter.endStep()
+
+    reporter.startStep('スクリーンショット')
+      const image = await page.screenshot();
+      reporter.addAttachment(`SS-Wikipedia-${global['jest-playwright'].displayName}`, image, "image/png");
     // expect(image).toMatchImageSnapshot(); whatismybroserの場合は毎回変わるとこがあるのでNG
+    reporter.endStep()
   })
 })
