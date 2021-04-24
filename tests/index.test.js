@@ -1,6 +1,16 @@
 // beforeAll(async () => {
 // })
 
+describe(`UA Parser ${browserName}`, () => {
+  it("ブラウザUA確認", async () => {
+    reporter
+      .description("ブラウザUA確認ですくりぷしょん")
+    await page.goto('https://faisalman.github.io/ua-parser-js/')
+    const image = await page.screenshot({fullPage: true})
+    reporter.addAttachment(`Screenshot-${browserName}`, image, "image/png")
+  })
+})
+
 
 describe(`Wikipedia ${browserName}`, () => {
 
@@ -12,7 +22,6 @@ describe(`Wikipedia ${browserName}`, () => {
       .story("すとーりー")
 
     // console.log(browserName, browser)
-    console.log(context)
     // console.log(expect.getState())
     await page.goto('https://www.wikipedia.org/')
     const image = await page.screenshot();
