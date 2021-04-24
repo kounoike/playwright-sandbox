@@ -9,7 +9,7 @@ describe(`UA Parser ${global['jest-playwright'].displayName}`, () => {
     await page.goto('https://faisalman.github.io/ua-parser-js/')
     await page.waitForTimeout(1000)
     const image = await page.screenshot({fullPage: true})
-    reporter.addAttachment(`Screenshot-${global['jest-playwright'].displayName}`, image, "image/png")
+    reporter.addAttachment(`SS-UA-${global['jest-playwright'].displayName}`, image, "image/png")
   })
 })
 
@@ -28,7 +28,7 @@ describe(`Wikipedia ${global['jest-playwright'].displayName}`, () => {
     // console.log(expect.getState())
     await page.goto('https://www.wikipedia.org/')
     const image = await page.screenshot();
-    reporter.addAttachment(`Screenshot-${global['jest-playwright'].displayName}`, image, "image/png");
+    reporter.addAttachment(`SS-Wikipedia-${global['jest-playwright'].displayName}`, image, "image/png");
     // expect(image).toMatchImageSnapshot(); whatismybroserの場合は毎回変わるとこがあるのでNG
   })
 })
