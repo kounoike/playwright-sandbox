@@ -7,6 +7,7 @@ describe(`UA Parser ${browserName}`, () => {
       .description("ブラウザUA確認ですくりぷしょん")
       .addEnvironment('browser', browserName)
     await page.goto('https://faisalman.github.io/ua-parser-js/')
+    await page.waitForTimeout(1000)
     const image = await page.screenshot({fullPage: true})
     reporter.addAttachment(`Screenshot-${browserName}`, image, "image/png")
   })
