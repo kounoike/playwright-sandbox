@@ -5,6 +5,7 @@ describe(`UA Parser ${browserName}`, () => {
   it("ブラウザUA確認", async () => {
     reporter
       .description("ブラウザUA確認ですくりぷしょん")
+      .addEnvironment('browser', browserName)
     await page.goto('https://faisalman.github.io/ua-parser-js/')
     const image = await page.screenshot({fullPage: true})
     reporter.addAttachment(`Screenshot-${browserName}`, image, "image/png")
@@ -20,6 +21,7 @@ describe(`Wikipedia ${browserName}`, () => {
       // .severity(Severity.Critical)
       .feature("なんかふぃーちゃー")
       .story("すとーりー")
+      .addEnvironment('browser', browserName)
 
     // console.log(browserName, browser)
     // console.log(expect.getState())
