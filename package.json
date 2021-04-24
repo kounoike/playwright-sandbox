@@ -13,9 +13,6 @@
     "playwright": "^1.10.0",
     "ts-jest": "^26.5.5"
   },
-  "jest": {
-    "preset": "jest-playwright-preset"
-  },
   "scripts": {
     "test": "jest"
   }
