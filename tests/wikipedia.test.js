@@ -1,27 +1,14 @@
 // beforeAll(async () => {
 // })
 
-describe(`UA Parser ${global['jest-playwright'].displayName}`, () => {
-  it("ブラウザUA確認", async () => {
-    reporter
-      .description("ブラウザUA確認ですくりぷしょん")
-      .addEnvironment('browser', global['jest-playwright'].displayName)
-    await page.goto('https://faisalman.github.io/ua-parser-js/')
-    await page.waitForTimeout(1000)
-    const image = await page.screenshot({fullPage: true})
-    reporter.addAttachment(`SS-UA-${global['jest-playwright'].displayName}`, image, "image/png")
-  })
-})
-
-
 describe(`Wikipedia ${global['jest-playwright'].displayName}`, () => {
 
   it("should display page", async () => {
     reporter
-      .description("ですくりぷしょん")
+      .description("Wikipediaですくりぷしょん")
       // .severity(Severity.Critical)
-      .feature("なんかふぃーちゃー")
-      .story("すとーりー")
+      .feature("Wikipediaふぃーちゃー")
+      .story("Wikipediaすとーりー")
       .addEnvironment('browser', global['jest-playwright'].displayName)
 
     await page.goto('https://www.wikipedia.org/')
