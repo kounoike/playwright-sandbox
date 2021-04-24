@@ -5,7 +5,7 @@ describe(`UA Parser ${global['jest-playwright'].displayName}`, () => {
   it("ブラウザUA確認", async () => {
     reporter
       .description("ブラウザUA確認ですくりぷしょん")
-      .addEnvironment('browser', browserName)
+      .addEnvironment('browser', global['jest-playwright'].displayName)
     await page.goto('https://faisalman.github.io/ua-parser-js/')
     await page.waitForTimeout(1000)
     const image = await page.screenshot({fullPage: true})
@@ -22,7 +22,7 @@ describe(`Wikipedia ${global['jest-playwright'].displayName}`, () => {
       // .severity(Severity.Critical)
       .feature("なんかふぃーちゃー")
       .story("すとーりー")
-      .addEnvironment('browser', browserName)
+      .addEnvironment('browser', global['jest-playwright'].displayName)
 
     // console.log(browserName, browser)
     // console.log(expect.getState())
