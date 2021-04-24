@@ -2,7 +2,7 @@
 // })
 
 
-describe('Wikipedia', () => {
+describe(`Wikipedia ${browserName}`, () => {
 
   it("should display page", async () => {
     reporter
