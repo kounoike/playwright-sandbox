@@ -11,6 +11,7 @@ module.exports = {
             browsers: [
                 {
                     name: 'chromium',
+                    displayName: 'Chrome',
                     launchOptions: {
                         channel: 'chrome',
                         headless: false
@@ -18,6 +19,7 @@ module.exports = {
                 },
                 {
                     name: 'chromium',
+                    displayName: 'Edge',
                     launchOptions: {
                         channel: 'msedge',
                         headless: false
