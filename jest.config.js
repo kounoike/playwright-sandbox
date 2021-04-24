@@ -27,6 +27,7 @@ module.exports = {
                 },
                 {
                     name: 'firefox',
+                    displayName: 'Firefox',
                     launchOptions: {
                         headless: false
                     }
