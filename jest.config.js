@@ -1,5 +1,5 @@
 module.exports = {
     preset: 'jest-playwright-preset',
-    setupFilesAfterEnv: ['jest-allure/dist/setup'],
+    setupFilesAfterEnv: ['./setup-test-framework.js'],
     testRunner : 'jasmine2',
 };

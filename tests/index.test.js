@@ -3,9 +3,11 @@ beforeAll(async () => {
   })
   
   test('should display correct browser', async () => {
-    await page.screenshot({ path: `example-${browserName}.png` });
     const browser = await page.$eval('.string-major', (el) => el.innerHTML)
     // fail either test!
     expect(browser).toContain('Chrome')
     // expect(browser).toContain('Firefox') 
+    const image = await page.screenshot();
+    reporter.addAttachment("Screenshot", image, "image/png");
+    // expect(image).toMatchImageSnapshot(); whatismybroserの場合は毎回変わるとこがあるのでNG
   })
